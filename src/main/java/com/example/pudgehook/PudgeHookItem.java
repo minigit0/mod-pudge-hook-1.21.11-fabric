@@ -63,11 +63,10 @@ public class PudgeHookItem extends Item {
                 SoundEvents.ENTITY_FISHING_BOBBER_THROW, SoundCategory.PLAYERS, 1.0F, 0.6F);
 
         if (hit != null) {
-            Entity target = hit.getEntity();
-            Vec3d pull = user.getPos().subtract(target.getPos());
-            Vec3d dir = pull.normalize();
-            target.setVelocity(dir.x * PULL_SPEED, Math.max(0.35, dir.y * PULL_SPEED), dir.z * PULL_SPEED);
-            target.velocityModified = true;
+           Entity target = hit.getEntity();
+            if (target instanceof LivingEntity living) {
+                living.takeKnockback(PULL_SPEED, target.getX() - user.getX(), target.getZ() - user.getZ());
+            }
             world.playSound(null, target.getX(), target.getY(), target.getZ(),
                     SoundEvents.ENTITY_PLAYER_ATTACK_STRONG, SoundCategory.PLAYERS, 1.0F, 0.8F);
         }
