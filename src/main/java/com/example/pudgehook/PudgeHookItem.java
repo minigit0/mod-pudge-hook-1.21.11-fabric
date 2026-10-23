@@ -23,7 +23,7 @@ import net.minecraft.world.World;
 public class PudgeHookItem extends Item {
     private static final double RANGE = 20.0;      // дальность хука в блоках
     private static final int COOLDOWN_TICKS = 60;  // кд: 60 тиков = 3 секунды
-    private static final double PULL_SPEED = 2.5;  // сила притягивания
+    private static final double PULL_SPEED = 3;  // сила притягивания
 
     public PudgeHookItem(Settings settings) {
         super(settings);
