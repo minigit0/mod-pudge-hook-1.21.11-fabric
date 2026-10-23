@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "pudgehook",
+  "version": "1.0.0",
+  "name": "Pudge Hook",
+  "description": "Meat Hook from Dota 2 as an item. Right click: throw hook, pull the target to you.",
+  "authors": ["you"],
+  "environment": "*",
+  "entrypoints": { "main": ["com.example.pudgehook.PudgeHookMod"] },
+  "depends": { "fabricloader": ">=0.16.0", "minecraft": "~1.21.11", "java": ">=21", "fabric-api": "*" }
+}
